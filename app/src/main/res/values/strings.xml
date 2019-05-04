@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Mystorege</string>
+    <string-array name="storage_types">
+        <item>Home</item>
+        <item>Business</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="storage_features">
+        <item>Private Space</item>
+        <item>Sharing Space</item>
+        <item>CCTV</item>
+        <item>Other</item>
+    </string-array>
+    <string name="dimention_hint">Eg: 23.4</string>
+    <string name="rental_hint">Eg: Rs. 10,000</string>
+    <string name="reporter_hint">Enter a Name</string>
+    <string name="title_activity_home">Home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">My Storage</string>
+    <string name="nav_header_subtitle">Easy, Faster Storage Provider</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="add_new_post">Add New Post</string>
+    <string name="search">Search</string>
+</resources>

@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        tools:ignore="MissingConstraints" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#88ade8"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:orientation="vertical"
+            android:scrollbarAlwaysDrawVerticalTrack="true">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="30dp"
+                android:background="#fff"
+                android:elevation="4dp"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true"
+                >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="2dp">
+
+                    <RelativeLayout
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent">
+
+
+                        <!--Title Text-->
+                        <TextView
+                            android:id="@+id/title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Make a Post"
+                            android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title"
+                            android:textSize="24sp" />
+
+                        <!--Title for the Storage Types - Spinner-->
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/title"
+                            android:layout_marginTop="20dp"
+                            android:text="Storage Type"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textSize="16sp" />
+
+                        <Spinner
+                            android:id="@+id/spinnerStorageType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textView3"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_horizontal"
+                            android:entries="@array/storage_types"
+                            android:gravity="center"
+                            android:spinnerMode="dialog"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/tvDimensions"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/spinnerStorageType"
+                            android:layout_marginTop="20dp"
+                            android:text="Dimensions"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textSize="16sp" />
+
+
+
+                        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="horizontal"
+                            android:layout_below="@+id/tvDimensions"
+                            android:id="@+id/linearLayoutDimensions">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                               >
+
+                                <android.support.design.widget.TextInputEditText
+                                    android:id="@+id/etDimensions"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="2"
+                                    android:gravity="center"
+                                    android:hint="@string/dimention_hint"
+                                    android:inputType="numberDecimal"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+                            </android.support.design.widget.TextInputLayout>
+
+                            <TextView
+                                android:id="@+id/tvDimensionInMeters"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@+id/spinnerStorageType"
+                                android:layout_marginTop="20dp"
+                                android:text="Sq. Meters"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+
+
+                        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="horizontal"
+                            android:id="@+id/dateTitle"
+                            android:layout_below="@+id/linearLayoutDimensions">
+
+                            <TextView
+                                android:id="@+id/tvDateAdded"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@+id/linearLayoutDimensions"
+                                android:layout_marginTop="20dp"
+                                android:text="Date"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                android:textSize="16sp"
+                                android:layout_weight="2"
+                                />
+
+                            <TextView
+                                android:id="@+id/tvTimeAdded"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@+id/linearLayoutDimensions"
+                                android:layout_marginTop="20dp"
+                                android:text="Time"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                android:textSize="16sp"
+                                android:layout_weight="2"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="horizontal"
+                            android:layout_below="@+id/dateTitle"
+                            android:id="@+id/dateTitleLayout"
+                            >
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                >
+
+                                <android.support.design.widget.TextInputEditText
+                                    android:id="@+id/addDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="2"
+                                    android:gravity="center"
+                                    android:textSize="26sp"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small"
+                                    android:editable="false"
+                                    android:focusable="false"/>
+                            </android.support.design.widget.TextInputLayout>
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                >
+
+                                <android.support.design.widget.TextInputEditText
+                                    android:id="@+id/addTime"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="2"
+                                    android:gravity="center"
+                                    android:textSize="26sp"
+                                    android:inputType="numberDecimal"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small"
+                                    android:editable="false"
+                                    android:focusable="false"/>
+                            </android.support.design.widget.TextInputLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvFeatures"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/dateTitleLayout"
+                            android:layout_marginTop="20dp"
+                            android:text="Storage Features"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textSize="16sp" />
+
+                        <Spinner
+                            android:id="@+id/spinnerFeatures"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvFeatures"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_horizontal"
+                            android:entries="@array/storage_features"
+                            android:gravity="center"
+                            android:spinnerMode="dialog"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/tvRental"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/spinnerFeatures"
+                            android:layout_marginTop="20dp"
+                            android:text="Monthly Rental"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textSize="16sp" />
+
+                        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="horizontal"
+                            android:layout_below="@+id/tvRental"
+                            android:id="@+id/linearLayoutRental">
+
+                            <TextView
+                                android:id="@+id/tvRupes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@+id/spinnerStorageType"
+                                android:layout_marginTop="20dp"
+                                android:text="Rs."
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                android:textSize="16sp" />
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                >
+
+                                <android.support.design.widget.TextInputEditText
+                                    android:id="@+id/etRental"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="2"
+                                    android:gravity="center"
+                                    android:hint="@string/rental_hint"
+                                    android:inputType="numberDecimal"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+                            </android.support.design.widget.TextInputLayout>
+
+                            <TextView
+                                android:id="@+id/tvPerMonth"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@+id/spinnerStorageType"
+                                android:layout_marginTop="20dp"
+                                android:text="/= Per Month"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvNotes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/linearLayoutRental"
+                            android:layout_marginTop="20dp"
+                            android:text="Notes (Optional)"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/etNotes"
+                            android:layout_below="@+id/tvNotes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:inputType="textCapSentences|textMultiLine"
+                            android:maxLength="2000"
+                            android:maxLines="5" />
+
+                        <TextView
+                            android:id="@+id/tvReporter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/etNotes"
+                            android:layout_marginTop="20dp"
+                            android:text="Reporter's Name"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textSize="16sp" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvReporter"
+                            android:layout_weight="1"
+                            >
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/etReporter"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:hint="@string/reporter_hint"
+                                android:inputType="textCapWords"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+                        </android.support.design.widget.TextInputLayout>
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/buttonSubmit"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/etReporter"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/holo_orange_dark"
+                        android:enabled="false"
+                        android:gravity="center"
+                        android:text="Submit" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "255560500367",
+    "firebase_url": "https://mystorage-74868.firebaseio.com",
+    "project_id": "mystorage-74868",
+    "storage_bucket": "mystorage-74868.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255560500367:android:bf2c24ea8024b64f",
+        "android_client_info": {
+          "package_name": "com.mystorege"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "255560500367-ja7nf109af0n3o47aboqqcoais6a1evr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mystorege",
+            "certificate_hash": "f003731fb0b2056d4761cdaf5714fa350a08c77c"
+          }
+        },
+        {
+          "client_id": "255560500367-muqkn0665vbrvnl4lldugrog2j7ovvec.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyY8zxPU_SnTLn4AR7YSRwSsDzrmTcWqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "255560500367-muqkn0665vbrvnl4lldugrog2j7ovvec.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
